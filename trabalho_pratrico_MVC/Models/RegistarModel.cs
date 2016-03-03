@@ -22,7 +22,7 @@ namespace trabalho_pratrico_MVC.Models
 
         [Required(ErrorMessage = "Campo código postal tem de ser preenchido")]
         public string cp { get; set; }
-
+         
         [Required(ErrorMessage = "Campo data de nascimento tem de ser preenchido")]
         [DataType(DataType.Date)]
         public DateTime data { get; set; }
