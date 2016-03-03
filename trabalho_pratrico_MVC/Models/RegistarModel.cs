@@ -20,6 +20,13 @@ namespace trabalho_pratrico_MVC.Models
         [Required(ErrorMessage = "Campo morada tem de ser preenchido")]
         public string morada { get; set; }
 
+        [Required(ErrorMessage = "Campo código postal tem de ser preenchido")]
+        public string cp { get; set; }
+
+        [Required(ErrorMessage = "Campo data de nascimento tem de ser preenchido")]
+        [DataType(DataType.Date)]
+        public DateTime data { get; set; }
+
         [Display(Name = "Palavra passe")]
         [Required(ErrorMessage = "Campo password tem de ser preenchido")]
         [DataType(DataType.Password)]
@@ -28,12 +35,6 @@ namespace trabalho_pratrico_MVC.Models
         [DataType(DataType.Password)]
         [Compare("password", ErrorMessage = "Palavras passe não são iguais")]
         public string confirmaPassword { get; set; }
-
-        [Required(ErrorMessage = "Indique o perfil do utilizador")]
-        public int perfil { get; set; }
-
-        [Required(ErrorMessage = "Indique o estado do utilizador")]
-        public bool estado { get; set; }
     }
 
     //class de acesso aos dados
@@ -76,9 +77,8 @@ namespace trabalho_pratrico_MVC.Models
             comando.Parameters.AddWithValue("@nome", (string)novo.nome);
             comando.Parameters.AddWithValue("@email", (string)novo.email);
             comando.Parameters.AddWithValue("@morada", (string)novo.morada);
-            comando.Parameters.AddWithValue("@morada", (string)novo.morada);
-            comando.Parameters.AddWithValue("@morada", (string)novo.morada);
-            comando.Parameters.AddWithValue("@nome", (string)novo.nome);
+            comando.Parameters.AddWithValue("@cp", (string)novo.cp);
+            comando.Parameters.AddWithValue("@data", (DateTime)novo.data);
             comando.Parameters.AddWithValue("@pass", (string)novo.password);
             comando.ExecuteNonQuery();
             comando.Dispose();

@@ -13,7 +13,7 @@ namespace trabalho_pratrico_MVC.Controllers
 
         // GET: Utilizadores
         public ActionResult Index()
-        {  
+        {
             return View();
         }
 
